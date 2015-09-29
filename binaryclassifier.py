@@ -1,13 +1,19 @@
 
 """
-Gradient boosted Trees classification and regression using MLlib.
 
-
-
-Additions
 @author: Johannes Bauer
+First version: 28 July 2015
 
-28 July 2015
+Run with
+> <spark-directory> /bin/spark-submit binaryclassifier.py
+replace <spark-directory> with path to your spark installation
+
+Test scikit learn vs Spark Machine Learning libraries (MLLib): accuracy and timing
+
+Testing and comparing different classifiers
+with some input data in libsvm or csv format
+
+function mllib_accuracy is taken from example script in Apache spark distribution
 
 1 Load file (path; csv or libsvm)
 2 Do random split into test and training set
@@ -20,7 +26,6 @@ Additions
 Note difference in input formats:
 -scikit learn takes numpy array input 
 -mllib takes rdd as list of labeled point format
-
 
 
 """
@@ -177,7 +182,7 @@ if __name__ == "__main__":
     dataformat_csv=False
 
 
-    # Assume that classification label is the last entry
+    # In csv format, assume that classification label is the last entry
    
     test_size=0.3
 
